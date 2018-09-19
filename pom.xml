@@ -73,7 +73,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>main</mainClass>
+					<mainClass>NewsletterParserWebApplication.main</mainClass>
 					<layout>ZIP</layout>
 				</configuration>
 				<executions>
