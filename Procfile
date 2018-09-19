@@ -1,1 +1,0 @@
-web: java com.vitaly.h.newsletterparserweb.NewsletterParserWebApplication
