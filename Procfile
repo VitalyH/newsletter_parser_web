@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* newsletter-parser-web
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* NewsletterParserWebApplication
