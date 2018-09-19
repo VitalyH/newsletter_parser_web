@@ -60,7 +60,8 @@ class ParserService {
         String screenshotRus = "Скриншот";
         String weatherLat = "Latvijas Vides, ģeoloģijas un meteoroloģijas centrs";
         String weatherRus = "Латвийский центр окружающей среды, геологии и метеорологии";
-        String archivePhotoLat = "Arhiva foto";
+        String archivePhotoLat = "Arhīva foto";
+        String archivePhotoLat2 = "Arhiva foto";
         String archivePhotoRus = "Фото из архива";
 
 
@@ -124,6 +125,7 @@ class ParserService {
                     .replace(janisValtersLat, janisValtersRus)
                     .replace(screenshotLat, screenshotRus)
                     .replace(archivePhotoLat, archivePhotoRus)
+                    .replace(archivePhotoLat2, archivePhotoRus)
                     .replace(weatherLat, weatherRus);
 
             //StringBuilder here "just because". String concatenation would be more readable.
