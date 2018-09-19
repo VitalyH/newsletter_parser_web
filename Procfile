@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp com.vitaly.h.newsletterparserweb.NewsletterParserWebApplication
+web: java com.vitaly.h.newsletterparserweb.NewsletterParserWebApplication
