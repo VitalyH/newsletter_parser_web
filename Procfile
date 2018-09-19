@@ -1,1 +1,1 @@
-web: java target/newsletter-parser-web-0.0.1-SNAPSHOT.war
+web: java com.vitaly.h.newsletterparserweb.main()
