@@ -11,6 +11,8 @@
 	<name>newsletter-parser-web</name>
 	<description>Demo project for Spring Boot</description>
 
+
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -68,12 +70,18 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>webapp/WEB-INF/jsp</directory>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					
+
 					<layout>ZIP</layout>
 				</configuration>
 				<executions>
