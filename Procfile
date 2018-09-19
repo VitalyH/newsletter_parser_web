@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* NewsletterParserWebApplication
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.vitaly.h.newsletterparserweb
