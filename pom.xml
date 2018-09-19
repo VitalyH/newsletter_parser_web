@@ -72,7 +72,7 @@
 	<build>
 		<resources>
 			<resource>
-				<directory>src/main/webapp/WEB-INF/jsp</directory>
+				<directory>src/main/webapp</directory>
 			</resource>
 		</resources>
 
