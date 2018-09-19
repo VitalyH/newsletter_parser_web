@@ -1,1 +1,1 @@
-web: java com.vitaly.h.newsletterparserweb.main()
+web: java com.vitaly.h.newsletterparserweb.main
