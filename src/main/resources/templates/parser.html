@@ -1,46 +1,42 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <head>
-    <title>Spring Boot Thymeleaf Hello World Example</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <link rel="stylesheet" type="text/css"
-          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-
-    <link rel="stylesheet" th:href="@{/css/main.css}"
-          href="../../css/main.css" />
-
+    <title>Newsletter parser</title>
 </head>
+
 <body>
-
-<nav class="navbar navbar-inverse">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Spring Boot</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <div class="container">
-
-    <div class="starter-template">
-        <h1>Spring Boot Web Thymeleaf Example</h1>
-        <h2>
-            <span th:text="'Message: ' + ${message}"></span>
-        </h2>
+    <!-- Legend -->
+    <div>
+        <span>h==Header / p==Paragraph / s==Separator</span>
     </div>
+    <div>
+        <span>ls==List Start / ll==List / le==List End</span>
+    </div>
+    <div>
+        <span>fl==Photo Left / fr==Photo Right</span>
+    </div>
+    <div>
+        <span>r==Reporter / sign==Signature</span>
+    </div>
+    <!-- Input field -->
+    <div>
+        <form method="POST" action="/" >
+            <textarea name="inputField" class="form-control" rows="17" style="width: 60%" id="*{inputField}">[[${inputField}]]</textarea>
+            <button type="submit" class="btn btn-success p=1">Run</button>
+            <textarea name="outputField" class="form-control" rows="17" style="width: 60%">[[${outputField}]]</textarea>
+        </form>
 
+    <!-- Run button -->
+    <!-- Output field -- >
+    <!-- Clear all -->
+    <div>
+        <a type="button" href="/clear-all" class="btn btn-warning"/>Clear all</a>
+    </div>
 </div>
 <!-- /.container -->
-
-<script type="text/javascript"
-        src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </body>
+
+
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </html>

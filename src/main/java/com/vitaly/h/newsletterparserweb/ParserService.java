@@ -8,6 +8,7 @@ class ParserService {
     private String outputField;
 
     void runParser(ParserModel parserModel) {
+
         inputField = parserModel.getOriginalText();
         outputField = "";
         parseTextFromInputField();
