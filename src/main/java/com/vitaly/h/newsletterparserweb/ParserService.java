@@ -14,7 +14,7 @@ class ParserService {
         parseTextFromInputField();
     }
 
-    String parseTextFromInputField() {
+    private void parseTextFromInputField() {
         String modifiedLineOfText;
         // A code snippets for newsletter.
         String div = "</div></div>";
@@ -135,9 +135,7 @@ class ParserService {
             sb.append(modifiedLineOfText)
                     .append("\n");
             outputField = sb.toString();
-
         }
-        return outputField;
     }
 
     String getOutputField() {
