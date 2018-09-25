@@ -8,6 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -62,9 +64,19 @@ public class ParserServiceTest {
                 "\"Однако\"\n", parserService.getOutputField());
     }
 
+    // Mock test example for future reference.
+    @Test
+    public void mockTest() {
+        parserModel = mock(ParserModel.class);
+        when(parserModel.getOriginalText()).thenReturn("--");
+        parserService.runParser(parserModel);
+        assertEquals(" — \n", parserService.getOutputField());
+    }
+
     @After
     public void generalCleaning() {
         parserService = null;
         parserModel = null;
     }
 }
+
