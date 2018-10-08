@@ -33,5 +33,4 @@ public class ParserController {
         parserService.clearAll();
         return "redirect:/";
     }
-
 }
