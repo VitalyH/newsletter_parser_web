@@ -12,25 +12,44 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ParserController {
 
     @Autowired
-    private ParserService parserService;
+    private NewsletterParserService newsletterParserService;
 
+    @Autowired
+    private EncryptorParserService encryptorParserService;
+
+    // Newsletter
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String renderFormsAndButtons(ModelMap model) {
-        model.put("inputField", parserService.getInputField());
-        model.put("outputField", parserService.getOutputField());
+        model.put("inputField", newsletterParserService.getInputField());
+        model.put("outputField", newsletterParserService.getOutputField());
         return "parser";
    }
 
     @RequestMapping(value = "/", method= RequestMethod.POST)
     public String runParser(@RequestParam String inputField) {
         ParserModel parserModel = new ParserModel(inputField);
-        parserService.runParser(parserModel);
+        newsletterParserService.runParser(parserModel);
         return "redirect:/";
     }
 
     @RequestMapping(value = "/clear-all", method= RequestMethod.GET)
     public String clearAll() {
-        parserService.clearAll();
+        newsletterParserService.clearAll();
         return "redirect:/";
+    }
+
+    // Encryptor
+    @RequestMapping(value = "/1060", method = RequestMethod.GET)
+    public String renderEncryptionFormsAndButtons(ModelMap model) {
+        model.put("inputField", encryptorParserService.getInputField());
+        model.put("outputField", encryptorParserService.getOutputField());
+        return "1060";
+    }
+
+    @RequestMapping(value = "/1060", method= RequestMethod.POST)
+    public String runEncryption(@RequestParam String inputField) {
+        ParserModel parserModel = new ParserModel(inputField);
+        encryptorParserService.runParser(parserModel);
+        return "redirect:/1060";
     }
 }

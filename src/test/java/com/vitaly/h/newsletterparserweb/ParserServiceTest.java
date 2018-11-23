@@ -15,12 +15,12 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 public class ParserServiceTest {
 
-    private ParserService parserService;
+    private NewsletterParserService parserService;
     private ParserModel parserModel;
 
     @Before
     public void setUp() {
-        parserService = new ParserService();
+        parserService = new NewsletterParserService();
         parserModel = new ParserModel();
     }
 

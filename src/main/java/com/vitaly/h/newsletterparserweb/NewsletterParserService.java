@@ -3,7 +3,7 @@ package com.vitaly.h.newsletterparserweb;
 import org.springframework.stereotype.Service;
 
 @Service
-class ParserService {
+class NewsletterParserService {
     private String inputField;
     private String outputField;
 
@@ -50,20 +50,7 @@ class ParserService {
         String quoteToReplace = "\"";
         String crookedQuoteOpen = "“";
         String crookedQuoteClose = "”";
-        // "100 Years 100 days" project.
-        String photoLat = "Foto";
-        String photoRus = "Фото";
-        String archLat = "Latvijas Nacionālā arhīva Latvijas Valsts kinofotofonodokumentu arhīvs";
-        String archRus = "Латвийский государственный архив кино- и фотодокументов Латвийского национального архива";
-        String janisValtersLat = "Jānis Valters Ezeriņš";
-        String janisValtersRus = "Янис Валтерс Эзериньш";
-        String screenshotLat = "Ekrānuzņēmums";
-        String screenshotRus = "Скриншот";
-        String weatherLat = "Latvijas Vides, ģeoloģijas un meteoroloģijas centrs";
-        String weatherRus = "Латвийский центр окружающей среды, геологии и метеорологии";
-        String archivePhotoLat = "Arhīva foto";
-        String archivePhotoLat2 = "Arhiva foto";
-        String archivePhotoRus = "Фото из архива";
+
 
 
         for (String lineOfTextFromInputField : inputField.trim().split("\\n")) {
@@ -120,14 +107,7 @@ class ParserService {
                     .replace(strangeQuote, quoteToReplace)
                     .replace(shortDash, longDash)
                     .replace(doubleDash, longDash)
-                    .replace(extraShortDash, longDash)
-                    .replace(photoLat, photoRus)
-                    .replace(archLat, archRus)
-                    .replace(janisValtersLat, janisValtersRus)
-                    .replace(screenshotLat, screenshotRus)
-                    .replace(archivePhotoLat, archivePhotoRus)
-                    .replace(archivePhotoLat2, archivePhotoRus)
-                    .replace(weatherLat, weatherRus);
+                    .replace(extraShortDash, longDash);
 
             //StringBuilder here "just because". String concatenation would be more readable.
             //outputField = outputField + modifiedLineOfText + "\n";
