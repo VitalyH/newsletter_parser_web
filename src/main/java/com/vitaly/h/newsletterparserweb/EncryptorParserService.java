@@ -12,7 +12,7 @@ class EncryptorParserService {
 
     private String inputField;
     private String outputField;
-    private String encryptionKey = System.getenv("key");
+    private String encryptionKey = System.getenv("encryptionKey");
 
 
     void runParser(ParserModel parserModel) {
