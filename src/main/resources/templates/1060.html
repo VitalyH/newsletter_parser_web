@@ -13,11 +13,16 @@
     <!-- Input-output fields, Run button -->
     <div>
         <form method="POST" action="/1060">
-            <textarea name="inputField" class="form-control" rows="17" style="width: 60%" id="*{inputField}">[[${inputField}]]</textarea>
+            <textarea name="inputField" class="form-control" rows="17" style="width: 60%">[[${inputField}]]</textarea>
             <button type="submit" class="btn btn-success p=1">Run!</button>
             <textarea name="outputField" class="form-control" rows="17" style="width: 60%">[[${outputField}]]</textarea>
         </form>
 
+    </div>
+
+    <!-- Clear all -->
+    <div>
+        <a type="button" href="/1060/wipe" class="btn btn-warning"/>Wipe the data!</a>
     </div>
 
     <!-- /.container -->

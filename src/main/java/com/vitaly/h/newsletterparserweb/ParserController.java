@@ -52,4 +52,9 @@ public class ParserController {
         encryptorParserService.runParser(parserModel);
         return "redirect:/1060";
     }
+    @RequestMapping(value = "/1060/wipe", method= RequestMethod.GET)
+    public String wipeTheData() {
+        encryptorParserService.wipeTheData();
+        return "redirect:/1060";
+    }
 }

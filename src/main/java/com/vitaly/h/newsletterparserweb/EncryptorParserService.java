@@ -62,6 +62,11 @@ class EncryptorParserService {
         }
     }
 
+    void wipeTheData() {
+        inputField = "";
+        outputField = "";
+    }
+
     String getOutputField() {
         return outputField;
     }
