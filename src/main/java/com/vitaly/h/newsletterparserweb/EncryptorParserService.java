@@ -34,7 +34,7 @@ class EncryptorParserService {
                 modifiedLineOfText = arrayWithAllFields[1];
                 String arrayWithCleanData[] = modifiedLineOfText.split(",");
                 key = arrayWithCleanData[0];
-                value = decryptValue(removeFirstAndLastChar(arrayWithCleanData[3]));
+                value = encryptValue(removeFirstAndLastChar(arrayWithCleanData[3]));
                 application = arrayWithCleanData[5];
 
                 outputField = outputField + "UPDATE properties SET VALUE = '" + value +"' where key = " + key + " and application = " + application + ";" + "\n";
