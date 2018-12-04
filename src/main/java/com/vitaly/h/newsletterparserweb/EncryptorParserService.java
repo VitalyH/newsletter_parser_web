@@ -34,7 +34,7 @@ class EncryptorParserService {
                 modifiedLineOfText = arrayWithAllFields[1];
                 String arrayWithCleanData[] = modifiedLineOfText.split(",");
                 key = arrayWithCleanData[0];
-                value = encryptValue(removeFirstAndLastChar(arrayWithCleanData[3]));
+                value = decryptValue(removeFirstAndLastChar(arrayWithCleanData[3]));
                 application = arrayWithCleanData[5];
 
                 outputField = outputField + "UPDATE properties SET VALUE = '" + value +"' where key = " + key + " and application = " + application + ";" + "\n";
@@ -56,6 +56,22 @@ class EncryptorParserService {
             Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
             return Base64.encodeBase64String(cipher.doFinal(valueToEncrypt.getBytes(StandardCharsets.UTF_8)));
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    String decryptValue(String valueToDecrypt) {
+        if (valueToDecrypt == null) {
+            return null;
+        }
+
+        try {
+            SecretKeySpec secretKey = new SecretKeySpec(encryptionKey.getBytes(), "AES");
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            return new String(cipher.doFinal(Base64.decodeBase64(valueToDecrypt)));
 
         } catch (Exception e) {
             throw new RuntimeException(e);
