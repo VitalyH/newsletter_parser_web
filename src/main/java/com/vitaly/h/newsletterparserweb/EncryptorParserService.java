@@ -24,6 +24,7 @@ class EncryptorParserService {
 
     private void parseTextFromInputField() {
         String key;
+        String valueToEncrypt;
         String value;
         String application;
         String modifiedLineOfText;
@@ -34,16 +35,31 @@ class EncryptorParserService {
                 modifiedLineOfText = arrayWithAllFields[1];
                 String arrayWithCleanData[] = modifiedLineOfText.split(",");
                 key = arrayWithCleanData[0];
-                value = encryptValue(removeFirstAndLastChar(arrayWithCleanData[3]));
+                valueToEncrypt = removeFirstAndLastChar(arrayWithCleanData[3]);
+
+                if (isAlreadyEncrypted(valueToEncrypt))
+                    value = valueToEncrypt;
+                else
+                    value = encryptValue(valueToEncrypt);
+
                 application = arrayWithCleanData[5];
 
-                outputField = outputField + "UPDATE properties SET VALUE = '" + value +"' where key = " + key + " and application = " + application + ";" + "\n";
+                outputField = outputField + "UPDATE properties SET VALUE = '" + value + "' where key = " + key + " and application = " + application + ";" + "\n";
             }
         }
     }
 
-    private String removeFirstAndLastChar(String dirtyString){
-        return dirtyString.substring(1, dirtyString.length()-1);
+    private String removeFirstAndLastChar(String dirtyString) {
+        return dirtyString.substring(1, dirtyString.length() - 1);
+    }
+
+    private boolean isAlreadyEncrypted(String checkPassword) {
+        try {
+            decryptValue(checkPassword);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 
