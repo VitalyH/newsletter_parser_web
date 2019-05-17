@@ -51,7 +51,7 @@ class NewsletterParserService {
         String crookedQuoteOpen = "“";
         String crookedQuoteClose = "”";
 
-    // Test gg
+    // Test gg ff
 
         for (String lineOfTextFromInputField : inputField.trim().split("\\n")) {
             String arrayWithMarkerAndLineOfText[] = lineOfTextFromInputField.split("==");
